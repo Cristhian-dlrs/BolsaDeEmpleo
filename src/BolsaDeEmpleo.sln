@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BolsaDeEmpleo.BackEnd.Infra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BolsaDeEmpleo.BackEnd.Test", "BackEnd\BolsaDeEmpleo.BackEnd.Test\BolsaDeEmpleo.BackEnd.Test.csproj", "{19DDF23B-DBA4-46A0-8CBB-6206E7DBD8EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteMe", "FrontEnd\DeleteMe\DeleteMe.csproj", "{C1E0B20B-AC03-45E3-96BA-272775F9630F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,7 @@ Global
 		{9DEE4E87-D889-4182-88EA-38D546A1BC67} = {B1711CD8-D0B2-4547-B0DF-3DB1E5F438BA}
 		{3443F9B1-B5F6-4CCA-8734-D96FEB8992E1} = {B1711CD8-D0B2-4547-B0DF-3DB1E5F438BA}
 		{19DDF23B-DBA4-46A0-8CBB-6206E7DBD8EA} = {B1711CD8-D0B2-4547-B0DF-3DB1E5F438BA}
+		{C1E0B20B-AC03-45E3-96BA-272775F9630F} = {E4F30C7F-C2F7-40CE-AAEE-5FB2441B65C9}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{61CE85F1-892B-4665-B31E-DCCFB0DEBF7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,5 +45,9 @@ Global
 		{19DDF23B-DBA4-46A0-8CBB-6206E7DBD8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19DDF23B-DBA4-46A0-8CBB-6206E7DBD8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19DDF23B-DBA4-46A0-8CBB-6206E7DBD8EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E0B20B-AC03-45E3-96BA-272775F9630F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E0B20B-AC03-45E3-96BA-272775F9630F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E0B20B-AC03-45E3-96BA-272775F9630F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E0B20B-AC03-45E3-96BA-272775F9630F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
