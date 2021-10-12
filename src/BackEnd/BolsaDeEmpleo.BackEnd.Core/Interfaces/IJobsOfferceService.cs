@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BolsaDeEmpleo.BackEnd.Core.DTOs;
 using BolsaDeEmpleo.BackEnd.Core.Entities;
 
 namespace BolsaDeEmpleo.BackEnd.Core.Interfaces

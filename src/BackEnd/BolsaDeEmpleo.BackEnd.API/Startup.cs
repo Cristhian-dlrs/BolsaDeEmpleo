@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using BolsaDeEmpleo.BackEnd.Core.Interfaces;
 using BolsaDeEmpleo.BackEnd.Core.Services;
 using BolsaDeEmpleo.BackEnd.Infrastructure.Data;
+using BolsaDeEmpleo.BackEnd.Infrastructure.Filters;
 using BolsaDeEmpleo.BackEnd.Infrastructure.Repositories;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,14 +33,23 @@ namespace BolsaDeEmpleo.BackEnd.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
             services
-                .AddControllers()
+                .AddControllers(options =>
+                {
+                    options.Filters.Add<GlobalExceptionFilter>();
+                })
                 .AddNewtonsoftJson(op =>
                 {
                     op.SerializerSettings.ReferenceLoopHandling =
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                     op.SerializerSettings.NullValueHandling = 
                         Newtonsoft.Json.NullValueHandling.Ignore;
+                })
+                .ConfigureApiBehaviorOptions(options =>
+                {
+                    options.SuppressModelStateInvalidFilter = true;
                 });
 
             services.AddDbContext<DataBaseContext>(opts =>
@@ -56,6 +67,16 @@ namespace BolsaDeEmpleo.BackEnd.API
                 c.SwaggerDoc("v1",
                     new OpenApiInfo { Title = "BolsaDeEmpleo.BackEnd.API", Version = "v1" });
             });
+
+            services
+                .AddMvc(options =>
+                {
+                    options.Filters.Add<ValidationFilter>();
+                })
+                .AddFluentValidation(options =>
+                {
+                    options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
