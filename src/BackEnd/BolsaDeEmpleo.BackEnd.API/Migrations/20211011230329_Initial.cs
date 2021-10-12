@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace BolsaDeEmpleo.BackEnd.Infrastructure.DataMigrations
+namespace BolsaDeEmpleo.BackEnd.API.Migrations
 {
     public partial class Initial : Migration
     {

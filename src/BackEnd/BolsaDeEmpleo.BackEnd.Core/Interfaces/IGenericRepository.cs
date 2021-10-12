@@ -8,8 +8,7 @@ namespace BolsaDeEmpleo.BackEnd.Core.Interfaces
 {
     public interface IGenericRepository<T> where T : BaseEntity
     {
-        public Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> expression = null,
-            List<string> includes = null);
+        public Task<IEnumerable<T>> GetAll();
         
         public Task<T> Get(Expression<Func<T, bool>> expression,
             List<string> includes = null);

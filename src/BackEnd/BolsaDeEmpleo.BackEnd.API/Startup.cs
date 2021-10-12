@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BolsaDeEmpleo.BackEnd.Core.Interfaces;
+using BolsaDeEmpleo.BackEnd.Core.Services;
 using BolsaDeEmpleo.BackEnd.Infrastructure.Data;
+using BolsaDeEmpleo.BackEnd.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,8 +45,11 @@ namespace BolsaDeEmpleo.BackEnd.API
             {
                 opts.UseSqlServer(
                     Configuration.GetConnectionString("BolsaDeEmpleo"),
-                    b => b.MigrationsAssembly("BolsaDeEmpleo.BackEnd.API"));
+                     b => b.MigrationsAssembly("BolsaDeEmpleo.BackEnd.API"));
             });
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IJobsOfferceService, JobsOfferService>();
             
             services.AddSwaggerGen(c =>
             {

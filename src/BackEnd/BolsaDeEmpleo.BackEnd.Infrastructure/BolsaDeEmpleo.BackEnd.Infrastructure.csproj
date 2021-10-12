@@ -10,7 +10,6 @@
 
     <ItemGroup>
       <Folder Include="Mappings" />
-      <Folder Include="Repositories" />
       <Folder Include="Validations" />
     </ItemGroup>
 
